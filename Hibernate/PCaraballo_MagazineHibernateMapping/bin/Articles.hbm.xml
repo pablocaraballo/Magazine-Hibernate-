@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="Entities.Article" table="articles">
+      <meta attribute="class-description">
+         This class contains the article  detail. 
+      </meta>
+      <id name="id_article" type="int" column="id_article">
+         
+      </id>
+      <property name="titol" column="titol" type="string"/>
+      <property name="data_creacio" column="data_creacio" type="date"/>
+      <property name="publicable" column="publicable" type="boolean"/>      
+      
+      <many-to-one name="autor" class="Entities.Autor" column="id_autor"
+      			   unique="true" not-null="false" cascade="all"/>
+   </class>
+</hibernate-mapping>
